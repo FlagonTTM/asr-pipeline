@@ -1,0 +1,210 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/audio.wav",
+  "sha256": "e339c2ab559686915e7f56a68b47102779b63b1fa49fd2cdb5d8fe6dd9de6f28",
+  "duration_s": 178.25,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 4.0232,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 30.0,
+   "text": "Технология. Потом было гидро-регулирование, водорегулирование, технология, какие задачи, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас, что у нас,",
+   "speaker": null,
+   "conf": 0.861,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0002",
+   "start": 30.0,
+   "end": 35.0,
+   "text": "что угодно, но у нас с этого нет никаких нужных причин.",
+   "speaker": null,
+   "conf": 0.611,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0003",
+   "start": 35.0,
+   "end": 40.0,
+   "text": "Потому что у нас задача – это здоровое создание.",
+   "speaker": null,
+   "conf": 0.611,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0004",
+   "start": 40.0,
+   "end": 44.0,
+   "text": "Причем технологии 50-х годов, которые нам в будущем точно",
+   "speaker": null,
+   "conf": 0.611,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0005",
+   "start": 44.0,
+   "end": 49.0,
+   "text": "не везут, они сильно отличаются от почвы образования.",
+   "speaker": null,
+   "conf": 0.611,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0006",
+   "start": 49.0,
+   "end": 52.0,
+   "text": "Технологии не везут.",
+   "speaker": null,
+   "conf": 0.611,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0007",
+   "start": 76.0,
+   "end": 83.0,
+   "text": "В идеале, у нас в конце поедет одна процедура, которая",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0008",
+   "start": 84.0,
+   "end": 89.0,
+   "text": "А если вот это все войдет в эпидемию, то пропадет",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0009",
+   "start": 91.0,
+   "end": 92.0,
+   "text": "Здоровье – это вообще главное.",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0010",
+   "start": 92.0,
+   "end": 93.0,
+   "text": "И в этом не будет нашего плана.",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0011",
+   "start": 94.0,
+   "end": 95.0,
+   "text": "То есть давайте это сделаем.",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0012",
+   "start": 95.0,
+   "end": 96.0,
+   "text": "Это и нужно сделать.",
+   "speaker": null,
+   "conf": 0.566,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0013",
+   "start": 96.0,
+   "end": 125.98,
+   "text": "Да. То есть давайте это сделаем. Это и нужно сделать, и все, и все, и все, и все, и все, и все, и все, и все, и все.",
+   "speaker": null,
+   "conf": 0.567,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0014",
+   "start": 126.0,
+   "end": 143.0,
+   "text": "Можете просто прилагать материал, который является субтитрозаборочным, и ввести его в четкую задачу, как это все должно реализовываться.",
+   "speaker": null,
+   "conf": 0.538,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0015",
+   "start": 143.0,
+   "end": 157.5,
+   "text": "У нас есть специальная вязка для взаимодействия с институтом.",
+   "speaker": null,
+   "conf": 0.548,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0016",
+   "start": 157.5,
+   "end": 167.92,
+   "text": "У нас институт для института управления правилами.",
+   "speaker": null,
+   "conf": 0.548,
+   "source": "primary",
+   "flags": []
+  },
+  {
+   "id": "s0017",
+   "start": 167.92,
+   "end": 178.35,
+   "text": "Продолжение следует...",
+   "speaker": null,
+   "conf": 0.52,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 178.25,
+  "dropped_degenerate": 16
+ }
+}

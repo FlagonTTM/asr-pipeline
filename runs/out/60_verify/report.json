@@ -1,0 +1,7 @@
+{
+ "schema": "asr.verify/1",
+ "run_dir": "/runs/out",
+ "ok": true,
+ "violations": [],
+ "checked": 78
+}

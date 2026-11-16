@@ -1,0 +1,50 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/out/40_repair/cuts/r4.whisper.wav",
+  "sha256": "a1de18f41a3a47f41da0fc40e14bd59f8689b77390ec9abe3ac9490323f26e68",
+  "duration_s": 1.9,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 6.1726,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 2.0,
+   "text": "В идеале у нас в конце проекта...",
+   "speaker": null,
+   "conf": 0.708,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 1.9,
+  "dropped_degenerate": 0
+ }
+}

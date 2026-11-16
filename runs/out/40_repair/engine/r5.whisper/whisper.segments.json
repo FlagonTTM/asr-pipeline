@@ -1,0 +1,50 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/out/40_repair/cuts/r5.whisper.wav",
+  "sha256": "1210082a920a66082df595562ac7542d63d11649e135988c6d9f8a5edfbe54d6",
+  "duration_s": 2.9,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 8.7309,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 2.32,
+   "text": "Все, войдет в этот чек.",
+   "speaker": null,
+   "conf": 0.654,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 2.9,
+  "dropped_degenerate": 0
+ }
+}

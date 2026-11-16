@@ -1,0 +1,27 @@
+# Local interpreters, caches and credentials
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+!.env.example
+.DS_Store
+.tmp/
+# Runtime outputs and local model/audio material (fixtures remain versionable)
+/run/
+/run-*/
+/output/
+/outputs/
+/models/
+/.cache/
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.log
+.engines.resolved.json

@@ -1,0 +1,81 @@
+{
+ "schema": "asr.repair.plan/1",
+ "attempt": 1,
+ "intervals": [
+  {
+   "id": "r1",
+   "start": 51.7,
+   "end": 54.92,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 3.5
+  },
+  {
+   "id": "r2",
+   "start": 58.58,
+   "end": 64.14,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 5.9
+  },
+  {
+   "id": "r3",
+   "start": 66.88,
+   "end": 75.35,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 8.8
+  },
+  {
+   "id": "r4",
+   "start": 82.7,
+   "end": 84.3,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 1.9
+  },
+  {
+   "id": "r5",
+   "start": 88.7,
+   "end": 91.3,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 2.9
+  },
+  {
+   "id": "r6",
+   "start": 92.7,
+   "end": 94.3,
+   "pad_s": 0.3,
+   "reason": "gap",
+   "engines": [
+    "whisper"
+   ],
+   "decode_s": 1.9
+  }
+ ],
+ "total_decode_s": 24.9,
+ "budget_s": 62.4,
+ "within_budget": true,
+ "stop_rule": {
+  "min_gain_ratio": 0.25,
+  "max_attempts": 2
+ },
+ "duration_s": 178.25,
+ "notes": []
+}

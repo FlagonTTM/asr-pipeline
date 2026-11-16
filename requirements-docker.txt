@@ -1,0 +1,9 @@
+faster-whisper==1.2.1
+ctranslate2==4.9.0
+soundfile==0.14.0
+numpy==1.26.4
+av==19.0.2
+onnxruntime==1.32.0
+tokenizers==0.23.3
+huggingface-hub==2.4.0
+tqdm==4.70.1

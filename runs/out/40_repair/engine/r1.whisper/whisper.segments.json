@@ -1,0 +1,50 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/out/40_repair/cuts/r1.whisper.wav",
+  "sha256": "803755b7c16a3dcfb5ca207da7c004085e9ea0e99a37858835af8e7c30a40616",
+  "duration_s": 3.52,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 12.8448,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 0.84,
+   "text": "Идемте.",
+   "speaker": null,
+   "conf": 0.617,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 3.52,
+  "dropped_degenerate": 1
+ }
+}

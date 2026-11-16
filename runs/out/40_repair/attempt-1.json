@@ -1,0 +1,100 @@
+{
+ "schema": "asr.repair.attempt/1",
+ "attempt": 1,
+ "audio": {
+  "path": "/runs/audio.wav",
+  "sha256": "e339c2ab559686915e7f56a68b47102779b63b1fa49fd2cdb5d8fe6dd9de6f28",
+  "duration_s": 178.25
+ },
+ "intervals": [
+  {
+   "id": "r1",
+   "start": 51.7,
+   "end": 54.92,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r1.whisper.wav",
+   "offset_s": 51.55,
+   "decode_s": 3.52,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x12.84 (peak -23.2 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 3.52 s, language=ru, beam=5\n[whisper_ct2] got 2 segments\n[whisper_ct2] dropped 1 degenerate segments (<2 words)",
+   "engine_output": "/runs/out/40_repair/engine/r1.whisper/whisper.segments.json"
+  },
+  {
+   "id": "r2",
+   "start": 58.58,
+   "end": 64.14,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r2.whisper.wav",
+   "offset_s": 58.43,
+   "decode_s": 5.86,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x19.69 (peak -26.9 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 5.86 s, language=ru, beam=5\n[whisper_ct2] got 1 segments",
+   "engine_output": "/runs/out/40_repair/engine/r2.whisper/whisper.segments.json"
+  },
+  {
+   "id": "r3",
+   "start": 66.88,
+   "end": 75.35,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r3.whisper.wav",
+   "offset_s": 66.73,
+   "decode_s": 8.77,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x6.47 (peak -17.2 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 8.77 s, language=ru, beam=5\n[whisper_ct2] got 1 segments",
+   "engine_output": "/runs/out/40_repair/engine/r3.whisper/whisper.segments.json"
+  },
+  {
+   "id": "r4",
+   "start": 82.7,
+   "end": 84.3,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r4.whisper.wav",
+   "offset_s": 82.55,
+   "decode_s": 1.9,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x6.17 (peak -16.8 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 1.90 s, language=ru, beam=5\n[whisper_ct2] got 1 segments",
+   "engine_output": "/runs/out/40_repair/engine/r4.whisper/whisper.segments.json"
+  },
+  {
+   "id": "r5",
+   "start": 88.7,
+   "end": 91.3,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r5.whisper.wav",
+   "offset_s": 88.55,
+   "decode_s": 2.9,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x8.73 (peak -19.8 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 2.90 s, language=ru, beam=5\n[whisper_ct2] got 1 segments",
+   "engine_output": "/runs/out/40_repair/engine/r5.whisper/whisper.segments.json"
+  },
+  {
+   "id": "r6",
+   "start": 92.7,
+   "end": 94.3,
+   "engine": "whisper",
+   "status": "ok",
+   "rc": 0,
+   "cut": "/runs/out/40_repair/cuts/r6.whisper.wav",
+   "offset_s": 92.55,
+   "decode_s": 1.9,
+   "segments": 1,
+   "stderr_tail": "[whisper_ct2] peak-normalised x4.02 (peak -13.1 dBFS -> -1.0 dBFS)\n[whisper_ct2] loading large-v3 (cpu/int8, local_files_only)\n[whisper_ct2] decoding 1.90 s, language=ru, beam=5\n[whisper_ct2] got 1 segments",
+   "engine_output": "/runs/out/40_repair/engine/r6.whisper/whisper.segments.json"
+  }
+ ],
+ "segments_n": 6,
+ "total_decode_s": 24.8,
+ "budget_s": 62.4,
+ "status": "ok",
+ "segments_path": "attempt-1.segments.json"
+}

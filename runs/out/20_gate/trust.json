@@ -1,0 +1,197 @@
+{
+ "schema": "asr.trust/2",
+ "verdict": "partial",
+ "primary": "whisper_ct2",
+ "gate_version": "2.0",
+ "audio": "/runs/audio.wav",
+ "action": "второй движок и сегментация без VAD; точечный повтор пропущенных участков",
+ "reasons": [
+  {
+   "code": "LOW_COVERAGE",
+   "severity": "warn",
+   "detail": "union-покрытие активности 0.856 < 0.9",
+   "intervals": []
+  },
+  {
+   "code": "SPEECH_GAP",
+   "severity": "warn",
+   "detail": "7 непокрытых участков активности >= 1.0 с (всего 19.0 с, макс 7.9 с)",
+   "intervals": [
+    {
+     "start": 52.0,
+     "end": 54.62
+    },
+    {
+     "start": 58.88,
+     "end": 61.78
+    },
+    {
+     "start": 62.18,
+     "end": 63.84
+    },
+    {
+     "start": 67.18,
+     "end": 75.05
+    },
+    {
+     "start": 83.0,
+     "end": 84.0
+    },
+    {
+     "start": 89.0,
+     "end": 91.0
+    },
+    {
+     "start": 93.0,
+     "end": 94.0
+    }
+   ]
+  }
+ ],
+ "audio_metrics": {
+  "duration_s": 178.25,
+  "rms_dbfs": -41.58,
+  "peak_dbfs": -13.09,
+  "clip_fraction": 0.0,
+  "band_share_below_1khz": 0.751,
+  "rms_per_10s": [
+   -40.5,
+   -41.3,
+   -37.7,
+   -44.8,
+   -40.0,
+   -44.5,
+   -45.6,
+   -44.1,
+   -37.7,
+   -36.5,
+   -44.8,
+   -50.7,
+   -40.9,
+   -47.4,
+   -46.0,
+   -42.8,
+   -44.9,
+   -44.8
+  ]
+ },
+ "activity": {
+  "energy_active_s": 157.6,
+  "vad_active_s": 157.6,
+  "noise_floor_dbfs": -83.8,
+  "vad": "energy"
+ },
+ "language_id": {
+  "language": "ru",
+  "probability": 1.0,
+  "method": "declared"
+ },
+ "coverage": {
+  "whisper_ct2": {
+   "coverage": 0.856,
+   "coverage_union": 0.856,
+   "covered_s": 134.8,
+   "union_active_s": 157.6,
+   "tail_uncovered_s": 0.0,
+   "speech_gaps": [
+    {
+     "start": 52.0,
+     "end": 54.62
+    },
+    {
+     "start": 58.88,
+     "end": 61.78
+    },
+    {
+     "start": 62.18,
+     "end": 63.84
+    },
+    {
+     "start": 67.18,
+     "end": 75.05
+    },
+    {
+     "start": 83.0,
+     "end": 84.0
+    },
+    {
+     "start": 89.0,
+     "end": 91.0
+    },
+    {
+     "start": 93.0,
+     "end": 94.0
+    }
+   ],
+   "last_segment_end": 178.25,
+   "n_segments": 17,
+   "empty_segments": 0
+  }
+ },
+ "empty_segments_total": 0,
+ "coverage_union": {
+  "covered_s": 134.8,
+  "active_s": 157.6,
+  "coverage_union": 0.856
+ },
+ "uncovered_all": [
+  {
+   "start": 52.0,
+   "end": 54.62
+  },
+  {
+   "start": 58.88,
+   "end": 61.78
+  },
+  {
+   "start": 62.18,
+   "end": 63.84
+  },
+  {
+   "start": 67.18,
+   "end": 75.05
+  },
+  {
+   "start": 83.0,
+   "end": 84.0
+  },
+  {
+   "start": 89.0,
+   "end": 91.0
+  },
+  {
+   "start": 93.0,
+   "end": 94.0
+  }
+ ],
+ "agreement": null,
+ "config": {
+  "vad": "energy",
+  "lid": "declared",
+  "language": "ru",
+  "primary": "whisper_ct2",
+  "thresholds": {
+   "energy_threshold_db": 8.0,
+   "energy_fallback_dbfs": -60.0,
+   "merge_gap_s": 0.35,
+   "min_gap_s": 1.0,
+   "tail_alert_s": 10.0,
+   "low_level_dbfs": -45.0,
+   "clip_fraction": 0.001,
+   "vad_underreport_ratio": 0.5,
+   "low_coverage_warn": 0.9,
+   "low_coverage_block": 0.65,
+   "info_degenerate_warn": 0.3,
+   "info_degenerate_block": 0.5,
+   "info_min_segments": 5,
+   "info_min_segment_s": 0.5,
+   "info_min_words": 2,
+   "low_agreement_dice": 0.35,
+   "low_agreement_window_share": 0.3,
+   "agreement_window_s": 20.0,
+   "language_mismatch_p": 0.8,
+   "lid_offline": true
+  }
+ },
+ "verdict_legacy": "failed"
+}

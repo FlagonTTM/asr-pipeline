@@ -1,0 +1,37 @@
+{
+ "whisper_ct2": {
+  "cmd": [
+   "/app/.venv/bin/python",
+   "/app/engines/whisper_ct2.py",
+   "--audio",
+   "{audio}",
+   "--out",
+   "{out}/whisper.segments.json",
+   "--language",
+   "{language}"
+  ],
+  "output": "whisper.segments.json",
+  "model": "large-v3",
+  "level_sensitive": true,
+  "timeout_s": 3600,
+  "ensemble": false
+ },
+ "whisper": {
+  "cmd": [
+   "/app/.venv/bin/python",
+   "/app/engines/whisper_ct2.py",
+   "--audio",
+   "{audio}",
+   "--out",
+   "{out}/whisper.segments.json",
+   "--language",
+   "{language}"
+  ],
+  "output": "whisper.segments.json",
+  "model": "large-v3",
+  "level_sensitive": true,
+  "timeout_s": 3600,
+  "ensemble": false,
+  "alias_of": "whisper_ct2"
+ }
+}

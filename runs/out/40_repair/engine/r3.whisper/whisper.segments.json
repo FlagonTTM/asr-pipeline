@@ -1,0 +1,50 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/out/40_repair/cuts/r3.whisper.wav",
+  "sha256": "3fdc95646e91e06f84437b961aa3f0bedc46a59dc26235a0d819a02c01a79f51",
+  "duration_s": 8.77,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 6.4708,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 8.77,
+   "text": "Даже сейчас это просто не условно. Как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же",
+   "speaker": null,
+   "conf": 0.926,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 8.77,
+  "dropped_degenerate": 0
+ }
+}

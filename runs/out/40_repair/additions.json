@@ -1,0 +1,134 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/audio.wav",
+  "sha256": "e339c2ab559686915e7f56a68b47102779b63b1fa49fd2cdb5d8fe6dd9de6f28",
+  "duration_s": 178.25,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "",
+  "version": "repair",
+  "params": {
+   "language": "ru",
+   "fade_ms": 50
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 51.7,
+   "end": 52.39,
+   "text": "Идемте.",
+   "speaker": null,
+   "conf": 0.617,
+   "source": "repair:whisper:r1",
+   "flags": [
+    "clipped"
+   ]
+  },
+  {
+   "id": "s0002",
+   "start": 58.58,
+   "end": 63.27,
+   "text": "Давайте опишем опыты, которые у нас и у вас были.",
+   "speaker": null,
+   "conf": 0.585,
+   "source": "repair:whisper:r2",
+   "flags": [
+    "clipped"
+   ]
+  },
+  {
+   "id": "s0003",
+   "start": 66.88,
+   "end": 75.35,
+   "text": "Даже сейчас это просто не условно. Как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же, как же",
+   "speaker": null,
+   "conf": 0.926,
+   "source": "repair:whisper:r3",
+   "flags": [
+    "clipped"
+   ]
+  },
+  {
+   "id": "s0004",
+   "start": 82.7,
+   "end": 84.3,
+   "text": "В идеале у нас в конце проекта...",
+   "speaker": null,
+   "conf": 0.708,
+   "source": "repair:whisper:r4",
+   "flags": [
+    "clipped"
+   ]
+  },
+  {
+   "id": "s0005",
+   "start": 88.7,
+   "end": 90.87,
+   "text": "Все, войдет в этот чек.",
+   "speaker": null,
+   "conf": 0.654,
+   "source": "repair:whisper:r5",
+   "flags": [
+    "clipped"
+   ]
+  },
+  {
+   "id": "s0006",
+   "start": 92.7,
+   "end": 94.11,
+   "text": "За здоровье это вообще главное.",
+   "speaker": null,
+   "conf": 0.616,
+   "source": "repair:whisper:r6",
+   "flags": [
+    "clipped"
+   ]
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "repair": {
+   "attempt": 1,
+   "plan_attempt": 1,
+   "intervals": [
+    {
+     "id": "r1",
+     "start": 51.7,
+     "end": 54.92
+    },
+    {
+     "id": "r2",
+     "start": 58.58,
+     "end": 64.14
+    },
+    {
+     "id": "r3",
+     "start": 66.88,
+     "end": 75.35
+    },
+    {
+     "id": "r4",
+     "start": 82.7,
+     "end": 84.3
+    },
+    {
+     "id": "r5",
+     "start": 88.7,
+     "end": 91.3
+    },
+    {
+     "id": "r6",
+     "start": 92.7,
+     "end": 94.3
+    }
+   ]
+  }
+ }
+}

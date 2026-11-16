@@ -1,0 +1,26 @@
+services:
+  asr:
+    build: .
+    image: asr-pipeline:0.1
+    environment:
+      HF_HOME: /models/hf
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+    volumes:
+      - ./models:/models
+      - ./runs:/runs
+    entrypoint: ["/app/docker/entrypoint.sh"]
+    command:
+      - run
+      - --audio
+      - /runs/audio.wav
+      - --out
+      - /runs/out
+      - --engine
+      - whisper_ct2
+      - --engines
+      - /app/docker/engines.docker.json
+      - --vad
+      - energy
+      - --lid
+      - declared

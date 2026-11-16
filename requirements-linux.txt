@@ -1,0 +1,11 @@
+transformers==5.21.0
+accelerate==1.12.0
+sentencepiece==0.2.1
+soundfile==0.14.0
+numpy==2.5.4
+faster-whisper==1.2.1
+ctranslate2==4.9.0
+av==19.0.2
+onnxruntime==1.23.2
+huggingface-hub==2.4.0
+tqdm==4.70.1

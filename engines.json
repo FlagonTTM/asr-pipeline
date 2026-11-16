@@ -1,0 +1,47 @@
+{
+  "gigaam": {
+    "cmd": ["${ASR_X20_ROOT:-/Users/Ivan/PycharmProjects/Codex/2026-10-27/x20}/work/ru_asr/venv/bin/python", "${ASR_PY_ROOT}/engines/x20_engine.py", "--engine", "gigaam", "--audio", "{audio}", "--out", "{out}/gigaam.segments.json", "--language", "{language}", "--window", "20"],
+    "output": "gigaam.segments.json",
+    "model": "gigaam_hf",
+    "level_sensitive": true,
+    "timeout_s": 900,
+    "ensemble": true,
+    "family": "torch"
+  },
+  "whisper": {
+    "cmd": ["${ASR_X20_ROOT:-/Users/Ivan/PycharmProjects/Codex/2026-10-27/x20}/work/venv/bin/python", "${ASR_PY_ROOT}/engines/x20_engine.py", "--engine", "whisper", "--audio", "{audio}", "--out", "{out}/whisper.segments.json", "--language", "{language}", "--window", "20"],
+    "output": "whisper.segments.json",
+    "model": "whisper-large-v3-turbo-mlx",
+    "level_sensitive": true,
+    "timeout_s": 900,
+    "ensemble": true,
+    "family": "mlx"
+  },
+  "parakeet": {
+    "cmd": ["${ASR_X20_ROOT:-/Users/Ivan/PycharmProjects/Codex/2026-10-27/x20}/work/venv/bin/python", "${ASR_PY_ROOT}/engines/x20_engine.py", "--engine", "parakeet", "--audio", "{audio}", "--out", "{out}/parakeet.segments.json", "--language", "{language}", "--window", "20"],
+    "output": "parakeet.segments.json",
+    "model": "parakeet-tdt-0.6b-v3-mlx",
+    "level_sensitive": true,
+    "timeout_s": 900,
+    "ensemble": true,
+    "family": "mlx"
+  },
+  "qwen": {
+    "cmd": ["${ASR_X20_ROOT:-/Users/Ivan/PycharmProjects/Codex/2026-10-27/x20}/work/venv/bin/python", "${ASR_PY_ROOT}/engines/x20_engine.py", "--engine", "qwen", "--audio", "{audio}", "--out", "{out}/qwen.segments.json", "--language", "{language}", "--window", "20"],
+    "output": "qwen.segments.json",
+    "model": "Qwen3-ASR-1.7B-4bit-mlx",
+    "level_sensitive": true,
+    "timeout_s": 900,
+    "ensemble": true,
+    "family": "mlx"
+  },
+  "whisper_ct2": {
+    "cmd": ["${ASR_PY_ROOT}/.venv/bin/python", "${ASR_PY_ROOT}/engines/whisper_ct2.py", "--audio", "{audio}", "--out", "{out}/whisper_ct2.segments.json", "--language", "{language}", "--model", "large-v3"],
+    "output": "whisper_ct2.segments.json",
+    "model": "large-v3",
+    "level_sensitive": true,
+    "timeout_s": 900,
+    "ensemble": false,
+    "family": "ct2"
+  }
+}

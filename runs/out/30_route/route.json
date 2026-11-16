@@ -1,0 +1,65 @@
+{
+ "schema": "asr.route/1",
+ "verdict": "partial",
+ "codes": [
+  "LOW_COVERAGE",
+  "SPEECH_GAP"
+ ],
+ "blocked": null,
+ "steps": [
+  {
+   "id": "second_engine",
+   "kind": "engine",
+   "because": "LOW_COVERAGE",
+   "params": {
+    "engine": "second",
+    "min_union": 0.65
+   }
+  },
+  {
+   "id": "repair_decode",
+   "kind": "repair",
+   "because": "SPEECH_GAP",
+   "params": {
+    "intervals": [
+     {
+      "start": 52.0,
+      "end": 54.62
+     },
+     {
+      "start": 58.88,
+      "end": 61.78
+     },
+     {
+      "start": 62.18,
+      "end": 63.84
+     },
+     {
+      "start": 67.18,
+      "end": 75.05
+     },
+     {
+      "start": 83.0,
+      "end": 84.0
+     },
+     {
+      "start": 89.0,
+      "end": 91.0
+     },
+     {
+      "start": 93.0,
+      "end": 94.0
+     }
+    ]
+   }
+  }
+ ],
+ "budget": {
+  "attempts_max": 2,
+  "seconds_max": 62.4
+ },
+ "summary_allowed": true,
+ "summary_mode": "caveated",
+ "unresolved": [],
+ "notes": []
+}

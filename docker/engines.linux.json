@@ -1,0 +1,99 @@
+{
+  "gigaam": {
+    "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/linux_engine.py",
+      "--engine",
+      "gigaam",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/gigaam.segments.json",
+      "--language",
+      "{language}"
+    ],
+    "output": "gigaam.segments.json",
+    "model": "ai-sage/GigaAM-v3",
+    "level_sensitive": true,
+    "timeout_s": 3600,
+    "ensemble": true,
+    "note": "requires pyannote.audio (remote code import); weights downloaded"
+  },
+  "whisper": {
+    "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/whisper_ct2.py",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/whisper.segments.json",
+      "--language",
+      "{language}",
+      "--model",
+      "Systran/faster-whisper-large-v3"
+    ],
+    "output": "whisper.segments.json",
+    "model": "Systran/faster-whisper-large-v3",
+    "level_sensitive": true,
+    "timeout_s": 3600,
+    "ensemble": true,
+    "note": "CT2, weights via prepare-models-linux.sh"
+  },
+  "parakeet": {
+    "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/linux_engine.py",
+      "--engine",
+      "parakeet",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/parakeet.segments.json",
+      "--language",
+      "{language}"
+    ],
+    "output": "parakeet.segments.json",
+    "model": "nvidia/parakeet-tdt-0.6b-v3",
+    "level_sensitive": true,
+    "timeout_s": 3600,
+    "ensemble": true
+  },
+  "qwen": {
+    "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/linux_engine.py",
+      "--engine",
+      "qwen",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/qwen.segments.json",
+      "--language",
+      "{language}"
+    ],
+    "output": "qwen.segments.json",
+    "model": "Qwen/Qwen3-ASR-1.7B",
+    "level_sensitive": true,
+    "timeout_s": 3600,
+    "ensemble": true
+  },
+  "whisper_ct2": {
+    "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/whisper_ct2.py",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/whisper.segments.json",
+      "--language",
+      "{language}",
+      "--model",
+      "Systran/faster-whisper-large-v3"
+    ],
+    "output": "whisper.segments.json",
+    "model": "Systran/faster-whisper-large-v3",
+    "level_sensitive": true,
+    "timeout_s": 3600,
+    "ensemble": false
+  }
+}

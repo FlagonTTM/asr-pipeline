@@ -1,0 +1,50 @@
+{
+ "schema": "asr.segments/1",
+ "audio": {
+  "path": "/runs/out/40_repair/cuts/r6.whisper.wav",
+  "sha256": "aadc2345055a08c92d22509dea68f8efb30c3d676fff0bd2998dcc69f16e0505",
+  "duration_s": 1.9,
+  "sr": 16000,
+  "channels": 1
+ },
+ "engine": {
+  "name": "whisper",
+  "model": "large-v3",
+  "version": "ct2",
+  "params": {
+   "device": "cpu",
+   "compute_type": "int8",
+   "language": "ru",
+   "local_files_only": true,
+   "beam_size": 5,
+   "vad_filter": false,
+   "temperature": 0.0,
+   "condition_on_previous_text": false,
+   "best_of": 5,
+   "suppress_blank": true,
+   "input_gain": 4.0232,
+   "peak_normalised": true
+  },
+  "level_sensitive": true
+ },
+ "segments": [
+  {
+   "id": "s0001",
+   "start": 0.0,
+   "end": 1.56,
+   "text": "За здоровье это вообще главное.",
+   "speaker": null,
+   "conf": 0.616,
+   "source": "primary",
+   "flags": []
+  }
+ ],
+ "meta": {
+  "vad": "off",
+  "window_s": null,
+  "language": "ru",
+  "language_probability": 1.0,
+  "duration_after_vad_s": 1.9,
+  "dropped_degenerate": 0
+ }
+}

@@ -1,0 +1,52 @@
+{
+ "schema": "asr.summary/1",
+ "status": "ok",
+ "trusted": false,
+ "verdict": "partial",
+ "codes": [
+  "LOW_COVERAGE",
+  "SPEECH_GAP"
+ ],
+ "guard": {
+  "numbers_ok": true,
+  "tasks_quoted": true,
+  "caveat_present": true,
+  "phrases_ok": true,
+  "sections_ok": true,
+  "numbers_checked": 14,
+  "violations": []
+ },
+ "numbers": [
+  -83.8,
+  -41.58,
+  -13.09,
+  0.0,
+  0.751,
+  0.856,
+  1.0,
+  19.05,
+  134.8,
+  157.6,
+  178.25
+ ],
+ "numbers_sha256": "aa301142d6ebc4a48696d067802f39d0c69e2276761a14e9cf648661fa9bf08b",
+ "derived_numbers": {
+  "uncovered_s": {
+   "value": 19.05,
+   "formula": "sum(uncovered_all[].end - uncovered_all[].start)",
+   "derived": true
+  }
+ },
+ "sections": {
+  "quality": true,
+  "overview": true,
+  "decisions": false,
+  "tasks": true,
+  "disputes": true
+ },
+ "files": [
+  "summary.md"
+ ],
+ "summary_sha256": "192d717aa854e840d76674a3fc5e7933fce7abe6bc202e0568b4a57e2f8cfd22",
+ "exit": 2
+}

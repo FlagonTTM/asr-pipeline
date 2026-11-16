@@ -1,0 +1,30 @@
+# syntax=docker/dockerfile:1
+FROM python:3.12-slim
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1 \
+    HF_HOME=/models/hf \
+    HF_HUB_OFFLINE=1 \
+    TRANSFORMERS_OFFLINE=1
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ffmpeg ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY requirements-linux.txt /tmp/requirements-linux.txt
+RUN python -m venv /app/.venv \
+ && /app/.venv/bin/pip install --upgrade pip \
+ && /app/.venv/bin/pip install --index-url https://download.pytorch.org/whl/cpu torch torchaudio \
+ && /app/.venv/bin/pip install -r /tmp/requirements-linux.txt
+
+COPY . /app
+RUN chmod +x /app/docker/*.sh \
+ && useradd --create-home --uid 1000 app \
+ && chown -R app:app /app
+USER app
+
+ENTRYPOINT ["/app/docker/entrypoint.linux.sh"]
+CMD ["bash", "scripts/smoke.sh"]

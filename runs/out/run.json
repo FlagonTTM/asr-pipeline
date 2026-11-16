@@ -1,0 +1,282 @@
+{
+ "schema": "asr.run/1",
+ "run_dir": "/runs/out",
+ "created_at": "2026-11-16T15:21:25+00:00",
+ "stages": [
+  {
+   "name": "ingest",
+   "status": "done",
+   "inputs_hash": "4a582288b4b098b0f0a4a0cfa1668a00",
+   "outputs": [
+    "00_input/manifest.json",
+    "00_input/engines.json"
+   ],
+   "exit": 0,
+   "duration_s": 0.183,
+   "fingerprint": {
+    "params": {
+     "audio": "/runs/audio.wav",
+     "language": "ru"
+    },
+    "inputs": {
+     "audio": "/runs/audio.wav",
+     "engines": "/app/docker/engines.docker.json"
+    }
+   }
+  },
+  {
+   "name": "asr",
+   "status": "done",
+   "inputs_hash": "36a01b23f3433a047e4ed1dac01ff717",
+   "outputs": [
+    "10_asr/segments.json"
+   ],
+   "exit": 0,
+   "duration_s": 52.496,
+   "fingerprint": {
+    "params": {
+     "engine": "whisper_ct2",
+     "cmd": [
+      "/app/.venv/bin/python",
+      "/app/engines/whisper_ct2.py",
+      "--audio",
+      "{audio}",
+      "--out",
+      "{out}/whisper.segments.json",
+      "--language",
+      "{language}"
+     ],
+     "model": "large-v3",
+     "language": "ru",
+     "ensemble": []
+    },
+    "inputs": {
+     "manifest": "00_input/manifest.json",
+     "engines": "00_input/engines.json"
+    }
+   }
+  },
+  {
+   "name": "gate",
+   "status": "done",
+   "inputs_hash": "2232c9e2b7f9b84a27bec1c657ed2c51",
+   "outputs": [
+    "20_gate/trust.json"
+   ],
+   "exit": 2,
+   "duration_s": 0.239,
+   "fingerprint": {
+    "params": {
+     "primary": "whisper_ct2",
+     "vad": "energy",
+     "lid": "declared",
+     "language": "ru"
+    },
+    "inputs": {
+     "segments": "10_asr/segments.json"
+    }
+   }
+  },
+  {
+   "name": "route",
+   "status": "done",
+   "inputs_hash": "f4b5ed08b9a01833a493fa8a463511d3",
+   "outputs": [
+    "30_route/route.json"
+   ],
+   "exit": 2,
+   "duration_s": 0.018,
+   "fingerprint": {
+    "params": {
+     "budget_frac": 0.35
+    },
+    "inputs": {
+     "trust": "20_gate/trust.json"
+    }
+   }
+  },
+  {
+   "name": "repair_plan",
+   "status": "done",
+   "inputs_hash": "8c20c51d7993447e48807aebcf7a1572",
+   "outputs": [
+    "40_repair/plan.json"
+   ],
+   "exit": 0,
+   "duration_s": 0.025,
+   "fingerprint": {
+    "params": {
+     "attempt": 1,
+     "trust": "20_gate/trust.json"
+    },
+    "inputs": {
+     "trust": "20_gate/trust.json",
+     "route": "30_route/route.json"
+    }
+   }
+  },
+  {
+   "name": "repair_run",
+   "status": "done",
+   "inputs_hash": "0cb0218129a7563b0e776bd40ff0fe78",
+   "outputs": [
+    "40_repair/additions.json"
+   ],
+   "exit": 0,
+   "duration_s": 43.303,
+   "fingerprint": {
+    "params": {
+     "attempt": 1,
+     "plan": "40_repair/plan.json"
+    },
+    "inputs": {
+     "plan": "40_repair/plan.json",
+     "audio": "/runs/audio.wav",
+     "engines": "00_input/engines.json"
+    }
+   }
+  },
+  {
+   "name": "repair_merge",
+   "status": "done",
+   "inputs_hash": "dff6b8bdb28ad8ce8ea10f2e4d541fd2",
+   "outputs": [
+    "40_repair/segments_merged.json"
+   ],
+   "exit": 2,
+   "duration_s": 0.025,
+   "fingerprint": {
+    "params": {
+     "attempt": 1
+    },
+    "inputs": {
+     "base": "10_asr/segments.json",
+     "additions": "40_repair/additions.json"
+    }
+   }
+  },
+  {
+   "name": "gate_after",
+   "status": "done",
+   "inputs_hash": "6b51fc31f0ea6411dd78991331a0fe8c",
+   "outputs": [
+    "21_gate_after/trust.json"
+   ],
+   "exit": 2,
+   "duration_s": 0.178,
+   "fingerprint": {
+    "params": {
+     "primary": "whisper_ct2",
+     "vad": "energy",
+     "lid": "declared",
+     "language": "ru",
+     "attempt": 1
+    },
+    "inputs": {
+     "segments": "40_repair/segments_merged.json"
+    }
+   }
+  },
+  {
+   "name": "summary",
+   "status": "done",
+   "inputs_hash": "8a4595ee7f76e204e3662ffd0372acd2",
+   "outputs": [
+    "50_summary/summary.md",
+    "50_summary/summary.json"
+   ],
+   "exit": 2,
+   "duration_s": 0.025,
+   "fingerprint": {
+    "params": {
+     "mode": "caveated",
+     "verdict": "partial"
+    },
+    "inputs": {
+     "trust": "21_gate_after/trust.json",
+     "transcript": "40_repair/segments_merged.json"
+    }
+   }
+  },
+  {
+   "name": "verify",
+   "status": "done",
+   "inputs_hash": "3d99569e455afe570e5fa10103770ad2",
+   "outputs": [
+    "60_verify/report.json"
+   ],
+   "exit": 0,
+   "violations": [],
+   "checked": 78,
+   "fingerprint": {
+    "params": {
+     "schema": "asr.run/1"
+    },
+    "inputs": {
+     "manifest": "00_input/manifest.json",
+     "trust": "21_gate_after/trust.json",
+     "segments": "40_repair/segments_merged.json",
+     "route": "30_route/route.json"
+    }
+   }
+  }
+ ],
+ "attempts": {
+  "prep": 0,
+  "repair": 1
+ },
+ "engines": {
+  "whisper_ct2": {
+   "cmd": [
+    "/app/.venv/bin/python",
+    "/app/engines/whisper_ct2.py",
+    "--audio",
+    "{audio}",
+    "--out",
+    "{out}/whisper.segments.json",
+    "--language",
+    "{language}"
+   ],
+   "model": "large-v3",
+   "level_sensitive": true
+  },
+  "whisper": {
+   "cmd": [
+    "/app/.venv/bin/python",
+    "/app/engines/whisper_ct2.py",
+    "--audio",
+    "{audio}",
+    "--out",
+    "{out}/whisper.segments.json",
+    "--language",
+    "{language}"
+   ],
+   "model": "large-v3",
+   "level_sensitive": true
+  }
+ },
+ "verdict": "partial",
+ "exit_code": 2,
+ "unresolved_s": 19.0,
+ "engines_sha256": "a0aa34f102bd3798b58a92f2760874f04bb50d6adb34fd74b89ae2a3df9d55c2",
+ "deferred": [
+  "second_engine"
+ ],
+ "notes": [
+  "route prep steps recognized but not executed by the orchestrator: second_engine"
+ ],
+ "effective_transcript": "40_repair/segments_merged.json",
+ "final_trust": "21_gate_after/trust.json",
+ "summary_refused": false,
+ "audio": {
+  "path": "/runs/audio.wav",
+  "sha256": "e339c2ab559686915e7f56a68b47102779b63b1fa49fd2cdb5d8fe6dd9de6f28",
+  "duration_s": 178.25
+ },
+ "finished_at": "2026-11-16T15:23:02+00:00",
+ "verify": {
+  "ok": true,
+  "violations": [],
+  "checked": 78
+ }
+}
